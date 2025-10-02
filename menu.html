@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Food Menu</title>
+  
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #fdf6f0;
+}
+.nav-flex-row {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color:#064420;
+      padding: 10px;
+      
+    }
+    .nav-item a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+
+header {
+  text-align: center;
+  padding: 30px;
+ background:linear-gradient(to right,#064420,#4CAF50);
+  color: white;
+}
+h2{
+    text-align: center;
+}
+
+.country-buttons {
+  margin-top: 15px;
+}
+
+.country-buttons button {
+  background-color: white;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.country-buttons button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.menu {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.menu-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.menu-item img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.menu-item h3 {
+  margin: 0;
+  color: #4CAF50;
+}
+
+.menu-item p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="nav-flex-row">
+      <li class="nav-item"><a href="{{url_for('index')}}">Home</a></li>
+      <li class="nav-item"><a href="{{url_for('reservation')}}">Reservation</a></li>
+      <li class="nav-item"><a href="{{url_for('menu')}}">Menu</a></li>
+      <li class="nav-item"><a href="{{url_for('shop')}}">Shop</a></li>
+      <li class="nav-item"><a href="{{url_for('reserved')}}">Reserved</a></li>
+      <li class="nav-item"><a href="{{url_for('about')}}">About</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>World Food Menu</h1>
+    <p>Select a country to view its famous dishes</p>
+    <div class="country-buttons">
+      <button onclick="showMenu('india')">India</button>
+      <button onclick="showMenu('italy')">Italy</button>
+      <button onclick="showMenu('japan')">Japan</button>
+      <button onclick="showMenu('mexico')">Mexican</button>
+      <button onclick="showMenu('africa')">African</button>
+      <button onclick="showMenu('france')">France</button>
+      <button onclick="showMenu('usa')">USA</button>
+      <button onclick="showMenu('thailand')">Thailand</button>
+      <button onclick="showMenu('vietnam')">vietnamese</button>
+      <button onclick="showMenu('korea')">korean</button>
+      <button onclick="showMenu('china')">chinese</button>
+   </div>
+  </header>
+
+  <section id="india" class="country-menu">
+  <h2>🇮🇳 INDIAN DISHES</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.uOXo5MRg7xgQ9OEb0ALAyAHaE7?w=220&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Biryani">
+    <div><h3>Biryani</h3><h1>₹180</h1><p>Spiced rice dish with meat or vegetables, rich with aroma and saffron.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.QQj3HIk7xuW-H-rpeAz5MAHaHa?w=186&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Butter Chicken">
+    <div><h3>Butter Chicken</h3><h1>₹220</h1><p>Creamy tomato-based chicken curry served with naan.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.6Uz8TlNI5W02xDA8FU2PhgHaEp?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Hyderabadi Biryani">
+    <div><h3>Hyderabadi Biryani</h3><h1>₹200</h1><p>Spiced rice with marinated meat and herbs.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.H-YO9uHsEzVo4H2TvMBvcwHaLO?w=124&h=188&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Masala Dosa">
+    <div><h3>Masala Dosa</h3><h1>₹70</h1><p>South Indian crispy crepe filled with spicy mashed potatoes.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.KD0NfepZxtbJHDw-ZWpT4wHaE8?w=243&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Chole Bhature">
+    <div><h3>Chole Bhature</h3><h1>₹90</h1><p>Spicy chickpea curry with deep-fried bread.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.V46wsD3sTFzV4cjG0lRsgAHaEJ?w=329&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Palak Paneer">
+    <div><h3>Palak Paneer</h3><h1>₹150</h1><p>Paneer in creamy spinach sauce.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.AUTRbiYgv_LHnn8wmzmXRAHaE8?w=239&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Samosa">
+    <div><h3>Samosa</h3><h1>₹20</h1><p>Fried pastry with spiced potatoes and peas.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.PRvEQUZXYnLNx6IJ0djgagHaEt?w=267&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tandoori Chicken">
+    <div><h3>Tandoori Chicken</h3><h1>₹180</h1><p>Yogurt-marinated chicken roasted in tandoor.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.xPiVvnM3_m-3v9Jca1cCXQHaE8?w=238&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Poha">
+    <div><h3>Poha</h3><h1>₹50</h1><p>Flattened rice with turmeric, onions, and peanuts.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.swclREp2zDpbAIkHwuk1DwHaGP?w=217&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Rajma Chawal">
+    <div><h3>Rajma Chawal</h3><h1>₹100</h1><p>Kidney beans curry served with rice.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.-lEWtPxX3gb2Q4D5FIto7QHaHa?w=186&h=186" alt="Baingan Bharta">
+    <div><h3>Baingan Bharta</h3><h1>₹90</h1><p>Roasted mashed eggplant with spices.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.BUSO2BKIxHBDum6A01ezuwHaHa?w=193&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Kadai Paneer">
+    <div><h3>Kadai Paneer</h3><h1>₹140</h1><p>Paneer cooked in a spicy onion-tomato gravy with bell peppers.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.unrTNzrxhfBVmwKDrI30ogHaFj?w=253&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Veg Kolhapuri">
+    <div><h3>Veg Kolhapuri</h3><h1>₹140</h1><p>A spicy mixed vegetable curry from Maharashtra.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.R4ZN095mp0PHHAOHa9EbzwHaHa?w=147&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Chettinad Chicken">
+    <div><h3>Chettinad Chicken</h3><h1>₹190</h1><p>Spicy South Indian chicken curry made with roasted spices.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Y6HtkLNBHns_8HIO9yR_jQHaFH" alt="Methi Thepla">
+    <div><h3>Methi Thepla</h3><h1>₹40</h1><p>Gujarati flatbread made with fenugreek leaves and spices.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.QUBAw70beROTA-wZgPanYgHaLH" alt="Besan Chilla">
+    <div><h3>Besan Chilla</h3><h1>₹50</h1><p>Gram flour pancakes with chopped onions and coriander.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.dkMSAfIB56j5IB9QPWIEIAHaHa" alt="Dal Tadka">
+    <div><h3>Dal Tadka</h3><h1>₹80</h1><p>Yellow lentils tempered with ghee, garlic, and cumin.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.xSmq6YU6W8spLgahQOnX8gHaFw?w=247&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Idly Sambar">
+    <div><h3>Idly Sambar</h3><h1>₹40</h1><p>Steamed rice cakes served with spiced lentil soup and coconut chutney.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://ts2.mm.bing.net/th?id=OIP.VvZEYioiXZFgk2d_XIW5iAHaLu" alt="Chapatti">
+    <div><h3>Chapatti</h3><h1>₹30</h1><p>Soft whole wheat flatbread served with vegetable curry or pickle.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.V6dx7d5n9ZcBwsNmBmKusgHaI7?w=148&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Parotta">
+    <div><h3>Parotta</h3><h1>₹35</h1><p>Flaky layered flatbread, best enjoyed with spicy salna or kurma.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.vqJz6RMCDPKFWiwop-B4LAHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Curd Rice">
+    <div><h3>Curd Rice</h3><h1>₹50</h1><p>Cool and creamy curd mixed with rice, tempered with mustard, chili, and curry leaves.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.w7DH977v8ENPGQJDYc8txQHaE8" alt="Gobi Manchurian">
+    <div><h3>Gobi Manchurian</h3><h1>₹70</h1><p>Cauliflower florets deep-fried and tossed in spicy Indo-Chinese sauce with garlic and spring onions.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.nTRe5Sg6FZHGFugenFOGVQHaE7" alt="Mushroom 65">
+    <div><h3>Mushroom 65</h3><h1>₹80</h1><p>Deep-fried mushrooms spiced with South Indian masalas, curry leaves, and green chilies.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Zzl3MlSUwoMwgqo7UgfGqAHaJ4" alt="Gulab Jamun">
+    <div><h3>Gulab Jamun</h3><h1>₹50</h1><p>Soft milk-based balls soaked in saffron-scented sugar syrup, served warm.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.a5pN_jYzKkbxO6ULtvMUowHaJO" alt="Rasmalai">
+    <div><h3>Rasmalai</h3><h1>₹60</h1><p>Soft paneer discs soaked in creamy saffron milk, garnished with pistachios and almonds.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.mnXbJ4YnfUWg9znuKhq3FgHaGM" alt="Rasgulla">
+    <div><h3>Rasgulla</h3><h1>₹50</h1><p>Spongy white cheese balls soaked in light sugar syrup, served chilled.</p></div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.a6CSOjKvUSBmm62-UtZ7RQHaHa" alt="Laddu">
+    <div><h3>Laddu</h3><h1>₹30</h1><p>Round sweet treats made with gram flour, ghee, and sugar—perfect for festive occasions.</p></div>
+  </div>
+</section>
+
+
+  <section id="italy" class="country-menu">
+  <h2>🇮🇹 Italian Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.ivIc0cBQgaG8cdfiVptZsAHaE8?w=268&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pizza">
+    <div>
+      <h3>Margherita Pizza</h3>
+      <h1>₹250</h1>
+      <p>Classic pizza with tomatoes, mozzarella, and basil.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.xS1FS_JWhB6ok0zT12DXsQHaJ4?w=186&h=248&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Pasta">
+    <div>
+      <h3>Spaghetti Carbonara</h3>
+      <h1>₹280</h1>
+      <p>Spaghetti in a creamy egg and pancetta sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.EBkDSG9XCPV0zs8A9yPbEAHaFj?w=234&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Spaghetti alla Carbonara">
+    <div>
+      <h3>Spaghetti alla Carbonara</h3>
+      <h1>₹290</h1>
+      <p>Creamy pasta with eggs, cheese, pancetta, and pepper.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.GLPPmzYs-WZUk0uUBCN18wHaEK?w=186&h=104&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gnocchi">
+    <div>
+      <h3>Gnocchi</h3>
+      <h1>₹240</h1>
+      <p>Soft potato dumplings served with tomato or pesto sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.YEH-2vpcwBA8nbW67-o6ugHaJ9?w=186&h=250&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Fettuccine Alfredo">
+    <div>
+      <h3>Fettuccine Alfredo</h3>
+      <h1>₹270</h1>
+      <p>Flat pasta tossed in butter and rich parmesan cream sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.QHhXXqF7dSykHxO-lIKY1QHaFb?w=198&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Ossobuco">
+    <div>
+      <h3>Ossobuco</h3>
+      <h1>₹320</h1>
+      <p>Braised veal shanks cooked in white wine and vegetables.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.QZ5IWJmN2bL0nYTFkRzEjwHaJ4?w=150&h=200&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Caponata">
+    <div>
+      <h3>Caponata</h3>
+      <h1>₹190</h1>
+      <p>Sicilian eggplant dish with olives, capers, and sweet vinegar.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.wzzI4I4WEvQifqFAqLhT7AHaJQ?w=154&h=192&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Arancini">
+    <div>
+      <h3>Arancini</h3>
+      <h1>₹210</h1>
+      <p>Deep-fried rice balls stuffed with meat, cheese, and peas.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.KaRteQqqiZZSG-CrtxFo-AHaFj?w=182&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Polenta">
+    <div>
+      <h3>Polenta</h3>
+      <h1>₹180</h1>
+      <p>Traditional Northern Italian cornmeal dish, served creamy or baked.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.XbTFhcSmYF5RoX-XND8PJwHaHa?w=186&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Panzanella">
+    <div>
+      <h3>Panzanella</h3>
+      <h1>₹160</h1>
+      <p>Tuscan bread salad with tomatoes, cucumbers, and olive oil.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.q4CYc-WFs1bmKvyW6S5hqAHaE8?w=280&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Trippa alla Romana">
+    <div>
+      <h3>Trippa alla Romana</h3>
+      <h1>₹230</h1>
+      <p>Roman-style tripe cooked with tomato, mint, and pecorino cheese.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.W7xNY4p-6E49D5mcfq1AwQHaE8?w=292&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Risotto alla Milanese">
+    <div>
+      <h3>Risotto alla Milanese</h3>
+      <h1>₹260</h1>
+      <p>Creamy risotto flavored with saffron and butter, from Milan.</p>
+    </div>
+  </div>
+  <!--italy-->
+</section>
+
+<section id="japan" class="country-menu">
+  <h2>🇯🇵 Japanese Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.lG7BtjvnN5cfHFWhyHkM0AHaFj?w=181&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Sushi">
+    <div>
+      <h3>Sushi</h3>
+      <h1>₹300</h1>
+      <p>Rice rolls with fish, vegetables, and seaweed.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.xejfdc6z3ke2oJmjHejm0wHaE8?w=273&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Ramen">
+    <div>
+      <h3>Ramen</h3>
+      <h1>₹280</h1>
+      <p>Noodle soup with broth, meat, and vegetables.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.LedN950csyB7FQAoyQGSHgHaJQ?w=152&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gyoza">
+    <div>
+      <h3>Gyoza</h3>
+      <h1>₹200</h1>
+      <p>Japanese pan-fried dumplings filled with pork and vegetables.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.t71Z_f6RZBzRDvMk44B-vgHaHa?w=138&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Okonomiyaki">
+    <div>
+      <h3>Okonomiyaki</h3>
+      <h1>₹250</h1>
+      <p>Savory Japanese pancake with cabbage, meat, and special sauces.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.l2_9sEtDGMyIdRIEPkakXgHaEq?w=301&h=189&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Takoyaki">
+    <div>
+      <h3>Takoyaki</h3>
+      <h1>₹220</h1>
+      <p>Ball-shaped snacks filled with diced octopus and topped with bonito flakes.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.HoUQaWSaHcLNhIrwwjZHSAHaHa?w=190&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tonkatsu">
+    <div>
+      <h3>Tonkatsu</h3>
+      <h1>₹270</h1>
+      <p>Breaded and deep-fried pork cutlet served with shredded cabbage.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.iC8P0kZuoQOJIvCPMMuEXAHaE8?w=298&h=199&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Chawanmushi">
+    <div>
+      <h3>Chawanmushi</h3>
+      <h1>₹190</h1>
+      <p>Savory steamed egg custard with mushrooms, shrimp, and chicken.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.3p34yE6RdWbspShL8UU0DQHaFj?w=252&h=189&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Unagi">
+    <div>
+      <h3>Unagi</h3>
+      <h1>₹350</h1>
+      <p>Grilled freshwater eel glazed with sweet soy-based sauce, served over rice.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.rmkAlJgPEjNbnncukcXltAHaE7?w=271&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Natto">
+    <div>
+      <h3>Natto</h3>
+      <h1>₹180</h1>
+      <p>Fermented soybeans with a strong flavor and sticky texture, eaten with rice.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.ciIUmn7tm2lwvPByNb7rGwHaE8?w=300&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Yakitori">
+    <div>
+      <h3>Yakitori</h3>
+      <h1>₹230</h1>
+      <p>Grilled chicken skewers seasoned with tare sauce or salt.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.hJHpws4pQIviDfU8Nid0lgHaE8?w=267&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Katsudon">
+    <div>
+      <h3>Katsudon</h3>
+      <h1>₹260</h1>
+      <p>Rice bowl topped with tonkatsu, egg, and savory-sweet sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.lYOqrMr4rEDVZZBb33x0TAHaLG?w=186&h=279&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tempura Udon">
+    <div>
+      <h3>Tempura Udon</h3>
+      <h1>₹240</h1>
+      <p>Thick wheat noodles in hot broth, topped with crispy tempura.</p>
+    </div>
+  </div>
+</section>
+<!--japan-->
+
+<section id="mexico" class="country-menu">
+  <h2>🇲🇽 Mexican Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.a7CyI37cG6IQiLb2D9yhjAHaE7?w=289&h=193&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Tacos">
+    <div>
+      <h3>Tacos</h3>
+      <h1>₹180</h1>
+      <p>Filled tortillas with meat, cheese, and salsa.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.bCEtVq3qOFRcCRcdLUscLgHaD_?w=278&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Enchiladas">
+    <div>
+      <h3>Enchiladas</h3>
+      <h1>₹200</h1>
+      <p>Stuffed tortillas baked in chili sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.ewmk6g59N2d1hiyOwicoOQHaEK?w=273&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Tamales">
+    <div>
+      <h3>Tamales</h3>
+      <h1>₹160</h1>
+      <p>Steamed corn dough filled with meats, cheeses, or chilies, wrapped in corn husks.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.yV2h0BSWBCEc5cPva71_QQHaHa?w=183&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Chilaquiles">
+    <div>
+      <h3>Chilaquiles</h3>
+      <h1>₹170</h1>
+      <p>Fried tortilla strips simmered in red or green salsa and topped with cheese and eggs.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.3rt6lbYoK-t03KEx80oHAAHaDt?w=301&h=175&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pozole">
+    <div>
+      <h3>Pozole</h3>
+      <h1>₹220</h1>
+      <p>Traditional soup made with hominy and meat, garnished with cabbage, radish, and lime.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.mgRxaAcW4t1i1HNZLDygCAHaE7?w=289&h=192&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Sopes">
+    <div>
+      <h3>Sopes</h3>
+      <h1>₹150</h1>
+      <p>Thick tortilla rounds topped with beans, lettuce, salsa, and cheese.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.CLbolHQGI01Up2iOuvtEfgHaEo?w=294&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Mole Poblano">
+    <div>
+      <h3>Mole Poblano</h3>
+      <h1>₹210</h1>
+      <p>Chicken in a rich, dark sauce made with chilies, chocolate, and spices.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.CYTvZmGzpwhdhoAr5vVKjQHaFI?w=233&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tostadas">
+    <div>
+      <h3>Tostadas</h3>
+      <h1>₹160</h1>
+      <p>Fried corn tortillas topped with beans, meat, cheese, lettuce, and salsa.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.J5HuJjyxHTqhU1QE_CiR9QHaFB?w=257&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Birria">
+    <div>
+      <h3>Birria</h3>
+      <h1>₹230</h1>
+      <p>Spicy stew traditionally made with goat or beef, served with consommé and tortillas.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.MYdmmk7Rlwog2wZIfCK7XQHaLF?w=147&h=220&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Carne Asada">
+    <div>
+      <h3>Carne Asada</h3>
+      <h1>₹240</h1>
+      <p>Grilled beef marinated in citrus and spices, typically served with rice or tacos.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.I9mlrlxKkVRnhExOb_NJgwHaEL?w=329&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Elote">
+    <div>
+      <h3>Elote</h3>
+      <h1>₹120</h1>
+      <p>Grilled corn on the cob slathered with mayo, cheese, chili powder, and lime.</p>
+    </div>
+  </div>
+
+  <!--mexico-->
+</section>
+
+<section id="africa" class="country-menu">
+  <h2>🌍 African Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.QYI7LSCaXc5wP7fQIHIdJgHaHa?w=159&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Jollof Rice">
+    <div>
+      <h3>Jollof Rice</h3>
+      <h1>₹180</h1>
+      <p>Spiced tomato rice popular in West Africa.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Bq0faD9bzfLuB41nodFN6QHaHa?w=178&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bobotie">
+    <div>
+      <h3>Bobotie</h3>
+      <h1>₹200</h1>
+      <p>South African baked dish with spiced meat and egg topping.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Jx0c2MK8PTg4TZNAHDNR9QHaLH?w=116&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Suya">
+    <div>
+      <h3>Suya (Nigeria)</h3>
+      <h1>₹190</h1>
+      <p>Spicy grilled beef skewers marinated with ground peanuts and spices, a popular street food in Nigeria.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP._3BPxDAAfq0h8GLMx2yo9gHaHa?w=200&h=200&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Egusi Soup">
+    <div>
+      <h3>Egusi Soup (West Africa)</h3>
+      <h1>₹210</h1>
+      <p>Thick soup made with ground melon seeds, leafy greens, meat or fish, often served with pounded yam.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.6cvMlsP96LCmF8MPuvQyVQHaEO?w=304&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Injera">
+    <div>
+      <h3>Injera with Doro Wat (Ethiopia)</h3>
+      <h1>₹220</h1>
+      <p>Sour flatbread served with spicy chicken stew and lentils, a staple in Ethiopian cuisine.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.mqF-8nNgxxKsDG7-JiN5mQHaHa?w=182&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Nyama Choma">
+    <div>
+      <h3>Nyama Choma (Kenya)</h3>
+      <h1>₹230</h1>
+      <p>Roasted meat, often goat or beef, served with ugali and kachumbari (tomato-onion salad).</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.mvM4aVPktVh3n92NyG4QJQHaHg?w=167&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Fufu and Light Soup">
+    <div>
+      <h3>Fufu with Light Soup (Ghana)</h3>
+      <h1>₹200</h1>
+      <p>Starchy dough made from cassava or yam, served with spicy tomato-based meat soup.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.A5OBt7QY4EnGXLxz64PfxAHaHa?w=162&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bunny Chow">
+    <div>
+      <h3>Bunny Chow (South Africa)</h3>
+      <h1>₹190</h1>
+      <p>Half a loaf of bread hollowed out and filled with spicy curry, originally from Durban.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Ke1cd13hhXcOTrgNtAAQ1AHaGK?w=186&h=155&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Chakalaka">
+    <div>
+      <h3>Chakalaka (South Africa)</h3>
+      <h1>₹150</h1>
+      <p>Spicy vegetable relish made with onions, tomatoes, carrots, and beans, served as a side dish.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.gNNHx3OLtqmrN4-8P7HWjAHaKq?w=186&h=268&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Maafe">
+    <div>
+      <h3>Maafe (Senegal)</h3>
+      <h1>₹210</h1>
+      <p>Peanut stew with beef or chicken, vegetables, and tomato sauce, served with rice or couscous.</p>
+    </div>
+  </div>
+
+  <!--africa-->
+</section>
+
+  
+ <section id="france" class="country-menu">
+  <h2>🇫🇷 French Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.f4J9OGuCXIsDNxuSNrK20QHaE8?w=273&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Croissant">
+    <div>
+      <h3>Croissant</h3>
+      <h1>₹90</h1>
+      <p>Buttery, flaky pastry enjoyed for breakfast.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.pMrU13OZaD2jIptGFVpXowHaE8?w=281&h=188&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Ratatouille">
+    <div>
+      <h3>Ratatouille</h3>
+      <h1>₹180</h1>
+      <p>Stewed vegetables with herbs and olive oil.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.ROUSsVa0Kz0hxxO02EVAlwHaE8?w=276&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Duck Confit">
+    <div>
+      <h3>Duck Confit</h3>
+      <h1>₹350</h1>
+      <p>Slow-cooked duck leg preserved in its own fat, then seared until crispy and served with potatoes.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.jupSNi7TUtYATWRbbl6nvwHaLH?w=127&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Quiche Lorraine">
+    <div>
+      <h3>Quiche Lorraine</h3>
+      <h1>₹160</h1>
+      <p>Savory tart filled with eggs, cream, bacon, and cheese in a flaky pastry crust. Great for brunch.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.m5MZW5pVD_MXH3HWNBjrNwHaHa?w=194&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bouillabaisse">
+    <div>
+      <h3>Bouillabaisse</h3>
+      <h1>₹320</h1>
+      <p>A flavorful fish stew from Marseille, made with herbs, garlic, saffron, and a variety of seafood.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.m1YpGowwJwhBpFz9U3NxhAHaFj?w=260&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Salade Niçoise">
+    <div>
+      <h3>Salade Niçoise</h3>
+      <h1>₹220</h1>
+      <p>A colorful salad with tuna, hard-boiled eggs, olives, tomatoes, green beans, and potatoes.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.rNgIda0vfOSRD6gaxcLoXwHaF6?w=257&h=205&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pot-au-Feu">
+    <div>
+      <h3>Pot-au-Feu</h3>
+      <h1>₹280</h1>
+      <p>A traditional French beef stew made with root vegetables and meat, simmered for hours.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.ThRSxMlq7gTVNcTmvrA88gHaLG?w=134&h=199&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Steak Frites">
+    <div>
+      <h3>Steak Frites</h3>
+      <h1>₹300</h1>
+      <p>Simple and classic dish of grilled steak served with crispy French fries, popular in bistros.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.RdP6nvB3Nqwf0dFn3TcUOgHaFj?w=245&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Cassoulet">
+    <div>
+      <h3>Cassoulet</h3>
+      <h1>₹250</h1>
+      <p>Hearty slow-cooked casserole made with white beans, sausage, duck, and pork.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.nxd2RAplTzJZm9tY8d6LGQHaE8?w=250&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Tartiflette">
+    <div>
+      <h3>Tartiflette</h3>
+      <h1>₹240</h1>
+      <p>Rich dish from the French Alps made with potatoes, reblochon cheese, lardons, and onions.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.B2toCgNRppMK6qOVBRfnfwHaE7?w=248&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Piperade">
+    <div>
+      <h3>Piperade</h3>
+      <h1>₹190</h1>
+      <p>A Basque dish of peppers, onions, tomatoes, and eggs, sometimes served with ham or bread.</p>
+    </div>
+  </div>
+  <!--france-->
+</section>
+  
+<section id="usa" class="country-menu">
+  <h2>🇺🇸 American Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.-TdjMH58Q9_DTWIQLadAwgHaEc?w=295&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Burger">
+    <div>
+      <h3>Cheeseburger</h3>
+      <h1>₹200</h1>
+      <p>Beef patty with cheese, lettuce, and sauces.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.7ts8fJMBf5XB_0kBM9TCPAHaEK?w=323&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Fried Chicken">
+    <div>
+      <h3>Fried Chicken</h3>
+      <h1>₹180</h1>
+      <p>Crispy and juicy seasoned chicken pieces.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.-rDcCSUsW-lmhnILmv0v9QHaHa?w=186&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Chicken and Waffles">
+    <div>
+      <h3>Chicken and Waffles</h3>
+      <h1>₹220</h1>
+      <p>A delicious combination of crispy fried chicken served on top of fluffy waffles, often drizzled with syrup.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Q4gV4Ns04iFteE9AFPesVQHaHa?w=219&h=219&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Sloppy Joe">
+    <div>
+      <h3>Sloppy Joe</h3>
+      <h1>₹150</h1>
+      <p>Ground beef cooked in a sweet and tangy tomato sauce, served in a hamburger bun.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.8qBGkJ4OXDTDzqFoEzZL5gHaJ4?w=186&h=248&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Corn Dog">
+    <div>
+      <h3>Corn Dog</h3>
+      <h1>₹90</h1>
+      <p>A hot dog coated in a thick layer of cornmeal batter and deep-fried, commonly served at fairs.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.eMHUDHfnkK66d-Y2zvo8EwHaH0?w=186&h=196&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Clam Chowder">
+    <div>
+      <h3>Clam Chowder</h3>
+      <h1>₹160</h1>
+      <p>A creamy soup made with clams, potatoes, onions, and celery, popular in New England.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.oZ4s8fZlwMS_KwauaelZcQHaF9?w=235&h=189&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gumbo">
+    <div>
+      <h3>Gumbo</h3>
+      <h1>₹200</h1>
+      <p>A rich stew from Louisiana made with meat or shellfish, vegetables, and thickened with roux.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.ZH4ia0Ds5EqX7GbTXEgY4gHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Meatloaf">
+    <div>
+      <h3>Meatloaf</h3>
+      <h1>₹170</h1>
+      <p>Ground meat mixed with breadcrumbs and seasonings, baked in a loaf shape and often topped with ketchup or glaze.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.7MdIBuKMD7hEJAVzZOND9AHaE8?w=186&h=124&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Philly Cheesesteak">
+    <div>
+      <h3>Philly Cheesesteak</h3>
+      <h1>₹220</h1>
+      <p>Thinly sliced beefsteak and melted cheese served in a long hoagie roll, a Philadelphia classic.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Ti0nw8KKPjgKmB5N_f-cTAHaHa?w=183&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Biscuits and Gravy">
+    <div>
+      <h3>Biscuits and Gravy</h3>
+      <h1>₹140</h1>
+      <p>Fluffy southern biscuits smothered in creamy sausage gravy, typically served for breakfast.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.a_N-HzDCA0a2QA_3byS5nAHaE7?w=186&h=124&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Fried Green Tomatoes">
+    <div>
+      <h3>Fried Green Tomatoes</h3>
+      <h1>₹100</h1>
+      <p>Slices of unripe green tomatoes, battered and fried, often served with a dipping sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.aJpVcfV1O6a6E8rMnIkoFQHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Jambalaya">
+    <div>
+      <h3>Jambalaya</h3>
+      <h1>₹210</h1>
+      <p>Spicy rice dish with sausage, chicken, and shrimp, popular in Cajun and Creole cuisine.</p>
+    </div>
+  </div>
+    <!--usa-->
+</section>
+
+  <section id="thailand" class="country-menu">
+  <h2>🇹🇭 Thai Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Gy061FuHUwxhzEt_W54xrgHaLH?w=186&h=279&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pad Thai">
+    <div>
+      <h3>Pad Thai</h3>
+      <h1>₹220</h1>
+      <p>Stir-fried rice noodles with shrimp and peanuts.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.E0dZcR9GdoAGAtKNNdk27wHaLH?w=186&h=279&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Green Curry">
+    <div>
+      <h3>Green Curry</h3>
+      <h1>₹240</h1>
+      <p>Spicy coconut curry with vegetables and meat.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.0K0kJawZSZw8czlels7M_wHaLH?w=186&h=279&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Khao Soi">
+    <div>
+      <h3>Khao Soi</h3>
+      <h1>₹230</h1>
+      <p>Rich and creamy coconut curry noodle soup from Northern Thailand, often topped with crispy noodles.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.wpqMh1qlQBnif9JScTy5AwHaLH?w=121&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Khao Pad">
+    <div>
+      <h3>Khao Pad (Thai Fried Rice)</h3>
+      <h1>₹200</h1>
+      <p>Fragrant fried rice with vegetables, egg, and meat or seafood, seasoned with soy and fish sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.0V6Kw4AWe4OvqJvjQrHP8wHaE8?w=270&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Larb">
+    <div>
+      <h3>Larb</h3>
+      <h1>₹210</h1>
+      <p>A spicy, tangy minced meat salad from Northeast Thailand, served with herbs and sticky rice.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.VlhKoRa7-Fs6laUIC6jKEwHaJ3?w=186&h=248&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Massaman Curry">
+    <div>
+      <h3>Massaman Curry</h3>
+      <h1>₹250</h1>
+      <p>A mild, rich curry with potatoes, peanuts, and meat, influenced by Indian and Malay cuisine.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.nkyYlpC3dWVqAijp9b1RMgHaFj?w=253&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Yam Woon Sen">
+    <div>
+      <h3>Yam Woon Sen</h3>
+      <h1>₹200</h1>
+      <p>Spicy Thai glass noodle salad with shrimp, ground pork, vegetables, and lime-chili dressing.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.v6mrN74DHFeOw7fWwDlvNgHaFj?w=210&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Boat Noodles">
+    <div>
+      <h3>Kuay Teow Reua (Boat Noodles)</h3>
+      <h1>₹190</h1>
+      <p>Flavorful noodle soup traditionally sold from boats, with pork, beef, herbs, and dark soy broth.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.bIRSNSfOEXzbMHauRP_PDAHaKX?w=186&h=260&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pad See Ew">
+    <div>
+      <h3>Pad See Ew</h3>
+      <h1>₹210</h1>
+      <p>Stir-fried wide rice noodles with soy sauce, Chinese broccoli, and meat or tofu.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.SVH6apr9VnF1gUYR1r5rBAHaFj?w=167&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gaeng Som">
+    <div>
+      <h3>Gaeng Som (Sour Curry)</h3>
+      <h1>₹230</h1>
+      <p>Spicy and sour tamarind-based curry with vegetables and fish or shrimp, very popular in Southern Thailand.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.MgRkiGvntxT64k3so1noAAHaE8?w=255&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Moo Ping">
+    <div>
+      <h3>Moo Ping</h3>
+      <h1>₹190</h1>
+      <p>Grilled skewered pork marinated in sweet soy and garlic, served with sticky rice and chili sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Oj2eR9TkBsoIDim083XHrAHaHa?w=183&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Khao Kha Moo">
+    <div>
+      <h3>Khao Kha Moo</h3>
+      <h1>₹210</h1>
+      <p>Stewed pork leg on rice served with pickled mustard greens, hard-boiled egg, and a spicy garlic sauce.</p>
+    </div>
+  </div>
+  <!--thailand-->
+</section>
+
+  
+
+  <section id="vietnam" class="country-menu">
+  <h2>🇻🇳 Vietnamese Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Xq8SmP4JYVSjdxrUCs4EsQHaKX?w=147&h=206&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pho">
+    <div>
+      <h3>Pho</h3>
+      <h1>₹180</h1>
+      <p>Noodle soup with beef and herbs.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.5D0m2cG0zxw1CsIexnypRwHaE8?w=272&h=181&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Banh Mi">
+    <div>
+      <h3>Banh Mi</h3>
+      <h1>₹120</h1>
+      <p>Baguette sandwich with pickled veggies and meats.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.RdA6HIXkZ_V2a_uDKzxpgQHaE8?w=263&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bánh Bột Lọc">
+    <div>
+      <h3>Bánh Bột Lọc</h3>
+      <h1>₹100</h1>
+      <p>Chewy tapioca dumplings filled with shrimp and pork, typically served with fish sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.yHTmloeF4z1iDoIdcsf-rAHaFW?w=265&h=192&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bún Riêu">
+    <div>
+      <h3>Bún Riêu</h3>
+      <h1>₹160</h1>
+      <p>Tomato-based noodle soup with crab or shrimp paste, tofu, and herbs. Tangy and flavorful.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP._Dl1IjCFyyp-nIHdc-rPwQHaEK?w=287&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Cá Kho Tộ">
+    <div>
+      <h3>Cá Kho Tộ</h3>
+      <h1>₹200</h1>
+      <p>Caramelized braised catfish in a clay pot with a rich and savory sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.OQKStVXmYJhqmXnW4Kp0XAHaE7?w=259&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gỏi Cuốn Tôm">
+    <div>
+      <h3>Gỏi Cuốn Tôm</h3>
+      <h1>₹90</h1>
+      <p>Fresh shrimp spring rolls with rice noodles, herbs, and vegetables served with peanut or hoisin sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.SVe4APOO_8VEnq_u1qbKLwHaE8?w=291&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bánh Cuốn">
+    <div>
+      <h3>Bánh Cuốn</h3>
+      <h1>₹110</h1>
+      <p>Thin rice rolls filled with ground pork and mushrooms, topped with fried shallots and fish sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.-_bsXAI-koN4naq2Mhc1SgHaE8?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Cơm Tấm">
+    <div>
+      <h3>Cơm Tấm</h3>
+      <h1>₹170</h1>
+      <p>Broken rice dish served with grilled pork, egg, and pickled vegetables, topped with fish sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.tTyKCSYnYqipgeucCuvFnwHaE7?w=242&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bún Thịt Nướng">
+    <div>
+      <h3>Bún Thịt Nướng</h3>
+      <h1>₹150</h1>
+      <p>Cold vermicelli noodles with grilled pork, fresh herbs, vegetables, and nuoc cham (fish sauce dressing).</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.zZZddjIXUI1llc0F6YAd_AHaEK?w=293&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bánh Patê Sô">
+    <div>
+      <h3>Bánh Patê Sô</h3>
+      <h1>₹90</h1>
+      <p>Vietnamese puff pastry stuffed with ground meat, influenced by French pâté chaud.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.vnks6JuuC3kSuBmlS_DMqAHaE8?w=218&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bò Lúc Lắc">
+    <div>
+      <h3>Bò Lúc Lắc (Shaking Beef)</h3>
+      <h1>₹190</h1>
+      <p>Stir-fried beef cubes with garlic, pepper, soy sauce, and lime. Served with rice or salad.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.FYRPQrZW_RvrBt1VBclVxAHaE8?w=231&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bánh Khọt">
+    <div>
+      <h3>Bánh Khọt</h3>
+      <h1>₹130</h1>
+      <p>Mini crispy rice pancakes topped with shrimp, mung beans, and herbs, served with fish sauce.</p>
+    </div>
+  </div>
+<!--vietnam-->
+</section>
+
+
+<section id="korea" class="country-menu">
+  <h2>🇰🇷 Korean Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.6V3yEkXa32WaB6-2QaB0HwHaGR?w=189&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bibimbap">
+    <div>
+      <h3>Bibimbap</h3>
+      <h1>₹260</h1>
+      <p>Mixed rice with vegetables, egg, and chili paste.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.fPjTGA68oa4tDalw4YehqQHaE8?w=264&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Kimchi">
+    <div>
+      <h3>Kimchi</h3>
+      <h1>₹120</h1>
+      <p>Fermented spicy cabbage served as a side dish.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Q_RbHdBNNhB2AHVq-qLdmAHaHa?w=213&h=212&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Jjajangmyeon">
+    <div>
+      <h3>Jjajangmyeon</h3>
+      <h1>₹280</h1>
+      <p>Black bean sauce noodles with pork and vegetables, a beloved Korean-Chinese fusion dish.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.ngf0echjmFedjcyx92mJPgHaF1?w=228&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Haemul Pajeon">
+    <div>
+      <h3>Haemul Pajeon</h3>
+      <h1>₹200</h1>
+      <p>Savory Korean seafood and green onion pancake, often served with soy dipping sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.pMeSND1rSQLDtqQ3lufCsAHaHa?w=162&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Dak Galbi">
+    <div>
+      <h3>Dak Galbi</h3>
+      <h1>₹270</h1>
+      <p>Spicy stir-fried chicken with cabbage, sweet potato, and rice cakes cooked in gochujang sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.KeKkhmpLVUC86YuLGUrsLwHaEK?w=291&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Japchae">
+    <div>
+      <h3>Japchae</h3>
+      <h1>₹230</h1>
+      <p>Stir-fried glass noodles with vegetables and sometimes beef. Slightly sweet and savory.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.1EEgGA1A_v5q6tpmB6v3egHaHa?w=198&h=199&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Sundubu Jjigae">
+    <div>
+      <h3>Sundubu Jjigae</h3>
+      <h1>₹240</h1>
+      <p>Spicy soft tofu stew with seafood, vegetables, and egg served boiling hot in a stone bowl.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.PANI5MM1uh1fvOi5CwLg2AHaEK?w=305&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bossam">
+    <div>
+      <h3>Bossam</h3>
+      <h1>₹290</h1>
+      <p>Boiled pork belly served with kimchi, garlic, and sauces, wrapped in lettuce or cabbage leaves.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.dNQqIvbuF79SR09OYVuPkwHaE7?w=273&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Bibim Naengmyeon">
+    <div>
+      <h3>Bibim Naengmyeon</h3>
+      <h1>₹210</h1>
+      <p>Spicy cold buckwheat noodles served with vegetables, egg, and a sweet-spicy red pepper sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.iNoVqakX7h1Czo5XWmz4kQHaFj?w=249&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gamjatang">
+    <div>
+      <h3>Gamjatang</h3>
+      <h1>₹250</h1>
+      <p>Pork bone soup with potatoes, vegetables, and perilla leaves. Rich, spicy, and hearty.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.JnFwBPnRPjkDQgTSZLUjJAHaE8?w=217&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Gyeran Mari">
+    <div>
+      <h3>Gyeran Mari</h3>
+      <h1>₹130</h1>
+      <p>Korean rolled omelet with vegetables. Commonly served as a side dish or banchan.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.E77uMDYqG3lE7MNJ52OCGAHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Kimchi Jeon">
+    <div>
+      <h3>Kimchi Jeon</h3>
+      <h1>₹160</h1>
+      <p>Kimchi pancake made with fermented kimchi and flour batter, crispy and slightly spicy.</p>
+    </div>
+  </div>
+  <!--korea-->
+</section>
+
+<section id="china" class="country-menu">
+  <h2>🇨🇳 Chinese Dishes</h2>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.yhSy_a-kDIdAF0-D56XOpwHaLH?w=186&h=279&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Chow Mein">
+    <div>
+      <h3>Chow Mein</h3>
+      <h1>₹160</h1>
+      <p>Stir-fried noodles with vegetables and meat.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.YKPKw_c9fFfczhLP1mIJzQHaEJ?w=332&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Dumplings">
+    <div>
+      <h3>Dumplings</h3>
+      <h1>₹130</h1>
+      <p>Filled dough pockets steamed or fried.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.UkgtMs-vsbzw6ZgrAl4GSgHaGl?w=186&h=165&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Mapo Tofu">
+    <div>
+      <h3>Mapo Tofu</h3>
+      <h1>₹180</h1>
+      <p>A spicy Sichuan dish made with tofu, minced pork, and fermented bean paste in a numbing chili sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.5tJJmK0Z2HlDJyFXWoOAHwHaHa?w=186&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Dan Dan Noodles">
+    <div>
+      <h3>Dan Dan Noodles</h3>
+      <h1>₹170</h1>
+      <p>Sichuan-style spicy noodles with minced pork, chili oil, and pickled vegetables.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.UE5S0__3O5S5y1wDxZ0XpAHaD0?w=186&h=96&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Congee">
+    <div>
+      <h3>Congee</h3>
+      <h1>₹110</h1>
+      <p>Rice porridge served with toppings like century eggs, pork, or pickled vegetables.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.HWz30zCWJaVt9r-oqWLBgAHaE8?w=257&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Eggplant in Garlic Sauce">
+    <div>
+      <h3>Eggplant in Garlic Sauce</h3>
+      <h1>₹140</h1>
+      <p>Stir-fried Chinese eggplant with garlic, soy sauce, and vinegar. A sweet, savory, and tangy delight.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.eClwypk16zPlPsVXoJfCmQHaE8?w=294&h=196&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Chinese Hot Pot">
+    <div>
+      <h3>Chinese Hot Pot</h3>
+      <h1>₹250</h1>
+      <p>A communal meal where meats, vegetables, and noodles are cooked in simmering broth at the table.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.zdWmpVAwiHAKoM3ZjX_DfwHaE8?w=186&h=124&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pineapple Fried Rice">
+    <div>
+      <h3>Pineapple Fried Rice</h3>
+      <h1>₹160</h1>
+      <p>Fried rice tossed with pineapple chunks, shrimp or chicken, and a mix of vegetables.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.65FNZ64wW4l3KcOsdpJw4gHaHa?w=186&h=186&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Lo Mein">
+    <div>
+      <h3>Lo Mein</h3>
+      <h1>₹150</h1>
+      <p>Soft wheat noodles stir-fried with vegetables, meat, and savory soy-based sauce.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.cSAnowarsgKPl5BaR2lCzQHaFj?w=208&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Crispy Aromatic Duck">
+    <div>
+      <h3>Crispy Aromatic Duck</h3>
+      <h1>₹270</h1>
+      <p>Deep-fried duck shredded and served with pancakes, hoisin sauce, and cucumber.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.RkQG3s0RPRwa4HTOrXLNUQHaI7?w=186&h=225&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Sweet Corn Soup">
+    <div>
+      <h3>Sweet Corn Soup</h3>
+      <h1>₹100</h1>
+      <p>A smooth soup made with corn, egg ribbons, and sometimes chicken—classic in Indo-Chinese cuisine.</p>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://th.bing.com/th/id/OIP.Q1HYLw2zzTn0ePmxglBrPgHaE7?w=275&h=183&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Lion’s Head Meatballs">
+    <div>
+      <h3>Lion’s Head Meatballs</h3>
+      <h1>₹190</h1>
+      <p>Large pork meatballs stewed with cabbage in a savory broth. A specialty of Jiangsu cuisine.</p>
+    </div>
+  </div>
+
+
+  <!--china-->
+</section>
+  <!-- JS to Toggle Menus -->
+  <script>
+    function showMenu(countryId) {
+      const menus = document.querySelectorAll('.country-menu');
+      menus.forEach(menu => menu.style.display = 'none');
+      document.getElementById(countryId).style.display = 'block';
+    }
+  </script>
+
+    
+</body>
+</html>

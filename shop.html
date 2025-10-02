@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Branches - Hotel Booking</title>
+ 
+  <style>
+
+     header {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+
+
+     nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+    .shop-header {
+  text-align: center;
+  padding: 40px;
+  background: #ffefe7;
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.branch {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.branch img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.branch h3 {
+  margin: 15px 0 10px;
+}
+
+.branch p {
+  color: #555;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/reservation">Reservation</a>
+            <a href="/shop">Shop</a>
+            <a href="/reserved">Reserved</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+    <br><br>
+
+  <section class="shop-header">
+    <h1>Our Branches</h1>
+    <p>Explore our hotel branches located in various cities</p>
+  </section>
+
+  <section class="branches">
+    <div class="branch">
+      <img src="https://th.bing.com/th/id/OIP.cQYU9Fix7cvFoom9lG17OwHaE8?w=218&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Branch 1">
+      <h3>Chennai Branch</h3>
+      <p>Located in T. Nagar, this is our flagship branch with rooftop dining and private rooms.</p>
+    </div>
+
+    <div class="branch">
+      <img src="https://th.bing.com/th/id/OIP.S_CmAUnmWje0rhuJAoLYKQHaEK?w=311&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Branch 2">
+      <h3>Bangalore Branch</h3>
+      <p>Modern interiors and live music evenings in the heart of Indiranagar.</p>
+    </div>
+
+    <div class="branch">
+      <img src="https://th.bing.com/th/id/OIP.c8ghJEgfzeLiBdqJp4y3LgHaE8?w=230&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Branch 3">
+      <h3>Coimbatore Branch</h3>
+      <p>Peaceful garden seating near Race Course Road. Family-friendly atmosphere.</p>
+    </div>
+
+    <div class="branch">
+      <img src="https://th.bing.com/th/id/OIP.CUPQcc8K9d4RRAShoK1i8gHaEz?w=310&h=201&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Branch 4">
+      <h3>Hyderabad Branch</h3>
+      <p>Known for Hyderabadi cuisine, this branch blends tradition with modern dining.</p>
+    </div>
+  </section>
+</body>
+</html>

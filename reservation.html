@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservation - Hotel Table Booking</title>
+  
+  <style>
+    h2{
+        text-align: center;
+        font-weight: bolder;
+        font-size: 30px;
+
+    }
+     header {
+            background-color: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+
+
+     nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+    .reservation-container {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .reservation-type {
+      display: flex;
+      align-items: center;
+      color: aliceblue;
+      gap: 20px;
+      background: #2c3e50;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .reservation-type img {
+      width: 200px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .reservation-type h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .reservation-type p {
+      margin-top: 8px;
+    }
+
+    .form-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background: #ff6347;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .form-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    #successMessage {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  
+    <h2>RESERVATIONS</h2>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/reservation">Reservation</a>
+            <a href="/shop">Shop</a>
+            <a href="/reserved">Reserved</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+    
+
+  <div class="reservation-container">
+    <h1>Types of Reservations</h1>
+
+    <div class="reservation-type">
+      <img src="https://th.bing.com/th/id/OIP.na3qGIglDEDc1AUSDpetaQHaE8?w=256&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Standard Table">
+      <div>
+        <h2>Standard Table Reservation</h2>
+        <p>Book a regular dining table for a specific date and time. Ideal for couples, families, or friends looking for a simple dining experience.</p>
+      </div>
+    </div>
+
+    <div class="reservation-type">
+      <img src="https://th.bing.com/th/id/OIP._Me7HakgrkYwgwD7KmOJCAHaE8?w=275&h=184&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Private Dining">
+      <div>
+        <h2>Private Dining</h2>
+        <p>Enjoy a private space for meetings, romantic dinners, or celebrations. Comes with special arrangements and more privacy.</p>
+      </div>
+    </div>
+
+    <div class="reservation-type">
+      <img src="https://th.bing.com/th/id/OIP.C5tT9HMsyE0RETNpa-if2wHaFj?w=222&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Outdoor Seating">
+      <div>
+        <h2>Outdoor Seating</h2>
+        <p>Dine under the stars or enjoy fresh air with our beautiful garden or rooftop arrangements. Perfect for nature lovers.</p>
+      </div>
+    </div>
+
+    <div class="reservation-type">
+      <img src="https://th.bing.com/th/id/OIP.tZIWWgLdEy64t4peAeUzLAHaE8?w=285&h=190&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Special Occasion">
+      <div>
+        <h2>Special Occasion</h2>
+        <p>Planning a birthday, anniversary, or a surprise proposal? We’ll help set up decorations and provide a memorable experience.</p>
+      </div>
+    </div>
+
+    <div class="reservation-type">
+      <img src="https://th.bing.com/th/id/OIP.ppZUQikGHN3USxZlDwTI3QHaE8?w=273&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Group Reservation">
+      <div>
+        <h2>Group Reservation</h2>
+        <p>Booking for 8 or more people? Reserve a large table or section. Great for teams, family gatherings, or events.</p>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div id="successMessage">🎉 Reservation submitted successfully! Redirecting to Home...</div>
+
+      <h2>Make a Reservation</h2>
+      <form id="reservationForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="date">Reservation Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="type">Reservation Type:</label>
+        <select id="type" name="type" required>
+          <option value="standard">Standard Table</option>
+          <option value="private">Private Dining</option>
+          <option value="outdoor">Outdoor Seating</option>
+          <option value="occasion">Special Occasion</option>
+          <option value="group">Group Reservation</option>
+        </select>
+
+        <label for="location">Restaurant Location:</label>
+        <input type="text" id="location" name="location" placeholder="e.g., Downtown Branch" required>
+
+        <label for="message">Additional Notes:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Any special requests..."></textarea>
+
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('reservationForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('/submit_reservation', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 3000);
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(error => {
+        alert('Network error.');
+      });
+    });
+  </script>
+
+
+    
+
+</body>
+</html>
+
