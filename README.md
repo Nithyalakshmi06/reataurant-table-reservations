@@ -40,3 +40,6 @@ SQLite – Database for storing bookings and user details
 Bootstrap – Responsive layout
 
 Jinja2 – Templating engine for dynamic HTML
+
+
+https://nithyalakshmi06.github.io/reataurant-table-reservations/
