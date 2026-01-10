@@ -42,4 +42,4 @@ Bootstrap – Responsive layout
 Jinja2 – Templating engine for dynamic HTML
 
 
-https://nithyalakshmi06.github.io/reataurant-table-reservations/
+https://nithyalakshmi06.github.io/online-restaurant-tables-reservations-platform/
